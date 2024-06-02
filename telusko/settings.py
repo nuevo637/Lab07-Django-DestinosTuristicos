@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'travello.apps.TravelloConfig',
-    'destTuristicos'
+    'destTuristicos.apps.DestturisticosConfig'
 ]
 
 MIDDLEWARE = [

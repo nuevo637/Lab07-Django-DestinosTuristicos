@@ -7,4 +7,4 @@ def destinos(request):
     
     
     destinos = DestinosTuristicos.objects.all()
-    return render(request, 'index.html', {'destinos': destinos})
+    return render(request, 'destinos.html', {'destinos': destinos})
