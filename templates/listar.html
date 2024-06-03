@@ -14,18 +14,18 @@
         <h1>PORQUE VIAJAR, ES DE LAS MEJORES FORMAS DE CONECTAR CON EL MUNDO</h1>
         <h2>Opcion: Listar</h2>
         <div class="destinos"> 
-            {% for destino in destinos%}
+            {% for destino in destinos %}
             <div class="destino-item">
                 <div class="destino-imagen">
-                    <img src="img1.png" alt="">
-                    {% if dest.offer %}
+                    <img src="{{ destino.imagenCiudad.url }}">
+                    {% if destino.ofertaTour %}
                     <div class="spec_offer text-center">En oferta</div>
                     {% endif %}
                 </div>
                 <div class="destino-contenido">
-                    <div class="destino_titulo">New York</div>
-                    <div class="destino_descripcion"><p>Es de las mejores ciudades que han existido en el mundo</p></div>
-                    <div class="destino_precio">Precio de: S/800</div>
+                    <div class="destino_titulo">{{ destino.nombreCiudad }}</div>
+                    <div class="destino_descripcion"><p>{{ destino.descripcionCiudad }}</p></div>
+                    <div class="destino_precio">Precio de: S/{{ destino.precioTour }}</div>
                 </div>
             </div>
             {% endfor %}
