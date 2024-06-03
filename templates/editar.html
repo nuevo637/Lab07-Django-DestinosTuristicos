@@ -1,0 +1,28 @@
+{% load static%}
+{% static "images" as baseUrl %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Destino Turístico</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/styleEditar.css' %}">
+</head>
+<body>
+    <h1>Editar Destino Turístico</h1>
+    <h2>Opcion: Editar</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="nombreCiudad">Selecciona una ciudad:</label>
+        <select name="nombreCiudad" id="nombreCiudad">
+            {% for destino in destinos %}
+            <option value="{{ destino.nombreCiudad }}">{{ destino.nombreCiudad }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        {{ form.as_p }}
+        <button type="submit">Guardar Cambios</button>
+    </form>
+</body>
+</html>
