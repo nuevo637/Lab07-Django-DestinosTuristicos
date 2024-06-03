@@ -1,0 +1,21 @@
+{% load static%}
+{% static "images" as baseUrl %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Destino Turístico</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/styleCrear.css' %}">
+</head>
+<body>
+    <h1>Crear Nuevo Destino Turístico</h1>
+    <h2>Opcion: Crear</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+</body>
+</html>

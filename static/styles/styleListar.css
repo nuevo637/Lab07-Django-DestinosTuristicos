@@ -18,7 +18,7 @@ h1 {
     text-align: center;
     font-size: 30px;
     margin-bottom: 30px;
-    color: #ffffff; /* Blanco para el título */
+    color: #ffffff; 
 }
 
 .contenedor {
@@ -28,7 +28,7 @@ h1 {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: #2c3e50; /* Azul marino oscuro */
+    background-color: #738fab; 
     padding: 20px;
 }
 
@@ -38,7 +38,7 @@ h1 {
     align-items: flex-start;
     justify-content: center;
     width: 70%;
-    background-color: #34495e; /* Azul más claro para contraste */
+    background-color: #34495e; 
     padding: 20px;
     border-radius: 10px;
 }
@@ -48,20 +48,20 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: calc(33.33% - 20px); /* Ajustar el ancho para que quepan tres en una fila considerando el gap */
+    width: calc(33.33% - 20px); 
     margin: 10px;
     height: auto;
     padding: 10px;
-    background-color: #b1b1b1; /* Blanco para el fondo de cada item */
+    background-color: #b1b1b1; 
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidad */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .destino-imagen {
     position: relative;
     height: 200px;
     width: 100%;
-    background-color: #bdc3c7; /* Gris claro para el fondo de la imagen */
+    background-color: #bdc3c7; 
     border-radius: 10px 10px 0 0;
     overflow: hidden;
 }
@@ -77,12 +77,12 @@ h1 {
     text-align: center;
     margin-bottom: 10px;
     margin-top: 10px;
-    color: #2c3e50; /* Azul marino oscuro */
+    color: #2c3e50;
     font-weight: bold;
 }
 
 .destino_descripcion {
-    color: #3b4c4d; /* Gris intermedio */
+    color: #3b4c4d;
     font-size: 18px;
     margin-bottom: 10px;
     text-align: center;
@@ -91,7 +91,7 @@ h1 {
 .destino_precio {
     font-size: 18px;
     font-weight: bold;
-    color: #d35400; /* Naranja oscuro para resaltar el precio */
+    color: #d35400; 
     margin-bottom: 10px;
     text-align: center;
 }
@@ -100,7 +100,7 @@ h1 {
     position: absolute;
     top: 0px;
     left: 0px;
-    background-color: #d35400; /* Naranja oscuro */
+    background-color: #d35400; 
     color: white;
     padding: 5px 10px;
     border-radius: 0 0 5px 0;
