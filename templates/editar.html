@@ -2,27 +2,28 @@
 {% static "images" as baseUrl %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Destino Turístico</title>
+    <title>Seleccionar y Editar Destino</title>
     <link rel="stylesheet" type="text/css" href="{% static 'styles/styleEditar.css' %}">
 </head>
 <body>
-    <h1>Editar Destino Turístico</h1>
-    <h2>Opcion: Editar</h2>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <label for="nombreCiudad">Selecciona una ciudad:</label>
-        <select name="nombreCiudad" id="nombreCiudad">
-            {% for destino in destinos %}
-            <option value="{{ destino.nombreCiudad }}">{{ destino.nombreCiudad }}</option>
-            {% endfor %}
-        </select>
-        <br><br>
-        {{ form.as_p }}
-        <button type="submit">Guardar Cambios</button>
-    </form>
+    <h1>Seleccionar y Editar Destino</h1>
+
+    <h2>Destinos Disponibles</h2>
+    <div class="destinos-list">
+        {% for destino in destinos %}
+            <a class="destino-link" href="{% url 'seleccionar-editar-destino-con-pk' destino.pk %}">{{ destino.nombreCiudad }}</a>
+        {% endfor %}
+    </div>
+
+    {% if form %}
+        <h2>Editar Destino: {{ selected_destino.nombreCiudad }}</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Guardar Cambios</button>
+        </form>
+    {% endif %}
 </body>
 </html>

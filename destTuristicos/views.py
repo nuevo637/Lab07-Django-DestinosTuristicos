@@ -20,20 +20,21 @@ def crear_destino(request):
     return render(request, 'crear.html', {'form': form})
 
 #EDITAR DESTINO
-def editar_destino(request):
-    destinos = DestinosTuristicos.objects.all()
-    if request.method == 'POST':
-        form = DestinosForm(request.POST, request.FILES)
-        if form.is_valid():
-            nombre_ciudad = form.cleaned_data['nombreCiudad']
-            destino = get_object_or_404(DestinosTuristicos, nombreCiudad=nombre_ciudad)
-            form = DestinosForm(request.POST, instance=destino)
+def seleccionar_y_editar_destino(request, pk=None):
+    if pk:
+        destino = get_object_or_404(DestinosTuristicos, pk=pk)
+        if request.method == 'POST':
+            form = DestinosForm(request.POST, request.FILES, instance=destino)
             if form.is_valid():
                 form.save()
-                return HttpResponse("El destino ha sido guardado correctamente") 
+                return HttpResponse("El destino ha sido actualizado correctamente")
+        else:
+            form = DestinosForm(instance=destino)
     else:
-        form = DestinosForm()
-    return render(request, 'editar.html', {'form': form, 'destinos': destinos})
+        form = None
+    
+    destinos = DestinosTuristicos.objects.all()
+    return render(request, 'editar.html', {'destinos': destinos, 'form': form, 'selected_destino': pk})
 
 #ELIMINAR DESTINO
 def eliminar_destino(request):
